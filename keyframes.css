@@ -1,0 +1,57 @@
+body {
+    background: #333;
+}
+
+.square {
+    background: white;
+    width: 200px;
+    height: 200px;
+    margin-bottom: 10px;
+}
+
+.color-change {
+    animation-name: colorchange;
+    animation-duration: 5s;
+}
+
+.border-change {
+    animation-name: borderchange;
+    animation-duration: 3s;
+    /* Keeps the end result (with rounded corners) rather than revert to a standard square */
+    animation-fill-mode: forwards;
+}
+
+.position-change {
+    position: relative;
+    animation-name: positionchange;
+    animation-duration: 4s;
+    animation-iteration-count: 2;
+    /* animation-iteration-count: infinite; */
+    /* animation-delay: 2s; */
+    /* animation-direction: reverse; */
+    /* animation-timing-function: linear; */
+}
+
+@keyframes colorchange {
+    0% {background-color: white;}
+    25% {background-color: red;}
+    50% {background-color: green;}
+    75% {background-color: blue;}
+    100% {background-color: white;}
+}
+
+@keyframes positionchange {
+    0% {left: 0px; top: 0px}
+    25% {left: 300px; top: 0px;}
+    50% {left: 300px; top: 300px;}
+    75% {left: 0px; top: 300px;}
+    100% {left: 0px; top: 0px;}
+}
+
+@keyframes borderchange {
+    0% {border-radius: 0 0 0 0;}
+    25% {border-radius: 50% 0 0 0;}
+    50% {border-radius: 50% 50% 0 0;}
+    75% {border-radius: 50% 50% 50% 0;}
+    100% {border-radius: 50% 50% 50% 50%;}
+}
